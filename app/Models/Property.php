@@ -28,4 +28,8 @@ class Property extends Model
     {
         return $this->belongsTo(City::class);
     }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

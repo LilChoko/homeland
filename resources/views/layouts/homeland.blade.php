@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('fonts/flaticon/font/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fl-bigmug-line.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 
 
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
@@ -47,7 +49,7 @@
             <div class="container py-1">
                 <div class="row align-items-center">
                     <div class="col-8 col-md-8 col-lg-4">
-                        <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0"><strong>Homeland<span
+                        <h1 class="mb-0"><a href="/" class="text-white h2 mb-0"><strong>Homeland<span
                                         class="text-danger">.</span></strong></a></h1>
                     </div>
                     <div class="col-4 col-md-4 col-lg-8">
@@ -64,7 +66,7 @@
                                 <li><a href="/buy">Buy</a></li>
                                 <li><a href="/rent">Rent</a></li>
                                 <li class="has-children">
-                                    <a href="properties.html">Properties</a>
+                                    <a href="/">Properties</a>
                                     <ul class="dropdown arrow-top">
                                         <li><a href="{{ route('property_listing_type', 1) }}">Condo</a></li>
                                         <li><a href="{{ route('property_listing_type', 2) }}">Commercial Building</a>
@@ -74,8 +76,8 @@
                                 </li>
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/contact">Contact</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="register.html">Register</a></li>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/register">Register</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -119,7 +121,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     @yield('content')
@@ -145,18 +146,19 @@
                         </div>
                         <div class="col-md-6 col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Buy</a></li>
-                                <li><a href="#">Rent</a></li>
-                                <li><a href="#">Properties</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/buy">Buy</a></li>
+                                <li><a href="/rent">Rent</a></li>
+                                <li><a href="/">Properties</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 col-lg-6">
                             <ul class="list-unstyled">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Terms</a></li>
+                                {{-- FALTA --}}
+                                <li><a href="/">About Us</a></li>
+                                <li><a href="/">Privacy Policy</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/">Terms</a></li>
                             </ul>
                         </div>
                     </div>

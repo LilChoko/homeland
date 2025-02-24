@@ -147,13 +147,115 @@
         </div>
     </div>
 
+<!-- Sección de Reviews -->
+<div class="bg-white p-4 mt-5 border rounded shadow">
+    <h3 class="h4 text-black widget-title mb-4 text-center">Reviews</h3>
+
+    @if(session()->has('message'))
+        <div class="alert alert-success text-center">{{ session()->get('message') }}</div>
+    @endif
+
+    <!-- Mostrar las reseñas -->
+    <div class="reviews-list mb-4">
+        @foreach ($reviews as $review)
+            <div class="p-3 border-bottom">
+                <h5 class="mb-1">{{ $review->name }}
+                    <small class="text-muted">({{ $review->created_at->format('F j, Y') }})</small>
+                </h5>
+                <p class="mb-1">{{ $review->description }}</p>
+                <p class="text-warning">
+                    <!-- Mostrar estrellas según la calificación -->
+                    @for ($i = 1; $i <= 5; $i++)
+                        <i class="fa fa-star{{ $i <= $review->rating ? '' : '-o' }}"></i>
+                    @endfor
+                </p>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- Formulario para nueva reseña -->
+    <div class="p-4 bg-light border rounded">
+        <h4 class="text-black mb-3 text-center">Leave a Review</h4>
+        <form action="{{ route('property_details', $property->id) }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Review</label>
+                <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+            </div>
+
+            <!-- Selector de Estrellas -->
+            <div class="form-group">
+                <label class="d-block">Rating</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" title="5 stars">★</label>
+
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" title="4 stars">★</label>
+
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" title="3 stars">★</label>
+
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" title="2 stars">★</label>
+
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" title="1 star">★</label>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Submit Review</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Estilos para la sección de estrellas -->
+<style>
+    .rating {
+        display: flex;
+        justify-content: center;
+        direction: rtl;
+    }
+
+    .rating input {
+        display: none;
+    }
+
+    .rating label {
+        font-size: 24px;
+        color: #ddd;
+        cursor: pointer;
+    }
+
+    .rating input:checked ~ label {
+        color: gold;
+    }
+
+    .rating label:hover,
+    .rating label:hover ~ label {
+        color: gold;
+    }
+</style>
+
+
+
     <div class="site-section site-section-sm bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="site-section-title mb-5">
+                    {{-- <div class="site-section-title mb-5">
                         <h2>Related Properties</h2>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 

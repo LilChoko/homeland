@@ -11,5 +11,9 @@ Route::get('/buy', [HomeLandController::class, 'buy'])->name('buy');
 Route::get('/rent', [HomeLandController::class, 'rent'])->name('rent');
 Route::get('/properties/{property_listing_type_id}', [HomeLandController::class, 'properties_listing_type'])->name('property_listing_type');
 Route::get('/about', [HomeLandController::class, 'about'])->name('about');
+Route::get('/register', [HomeLandController::class, 'showRegisterForm'])->name('register');
+Route::post('/register', [HomeLandController::class, 'register']);
+Route::match(['get', 'post'], '/login', [HomeLandController::class, 'login'])->name('login');
 Route::get('/contact', [HomeLandController::class, 'contact'])->name('contact');
-Route::get('/login', [HomeLandController::class, 'login'])->name('login');
+Route::post('/contact', [HomeLandController::class, 'contact'])->name('contact.store');
+
