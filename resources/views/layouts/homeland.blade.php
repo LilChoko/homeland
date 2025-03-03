@@ -22,11 +22,9 @@
     <link rel="stylesheet" href="{{ asset('css/fl-bigmug-line.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
-
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
-
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
 
 </head>
 
@@ -214,9 +212,10 @@
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
 
     <script src="{{ asset('js/main.js') }}"></script>
-
+    <script src="{{ asset('js/homeland.js') }}"></script>
 </body>
 
 </html>

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminPropertiesController;
 use App\Http\Controllers\HomeLandController;
+use App\Http\Controllers\PropertiesAPIController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,4 @@ Route::match(['get', 'post'], '/login', [HomeLandController::class, 'login'])->n
 Route::get('/contact', [HomeLandController::class, 'contact'])->name('contact');
 Route::post('/contact', [HomeLandController::class, 'contact'])->name('contact.store');
 
+Route::get('/admin/properties', [AdminPropertiesController::class, 'index'])->name('admin.properties.index');

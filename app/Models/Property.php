@@ -32,4 +32,5 @@ class Property extends Model
     {
         return $this->hasMany(Review::class);
     }
+
 }

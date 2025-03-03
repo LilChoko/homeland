@@ -116,7 +116,11 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="" class="form-contact-agent" method="POST">
+                        <div id="successAlert" class="alert alert-success d-none">
+                            <strong>Success!</strong> Your message has been sent successfully.
+                        </div>
+                        <form id="formContactAgent" action="" class="form-contact-agent" method="POST">
+                            <input type="hidden" id="property_id" name="property_id" value="{{ $property->id }}">
                             @csrf
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -138,7 +142,7 @@
                                 <textarea id="message" name="message" class="form-control"> {{ old('message') }}</textarea>
                             </div>
                             <div class="form-group">
-                                <input type="submit" id="phone" class="btn btn-primary" value="Send Message">
+                                <input type="submit" id="btnSendContactAgentMessage" class="btn btn-primary" value="Send Message">
                             </div>
                         </form>
                     </div>
